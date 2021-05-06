@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.btn-wrap {
+	position: relative;
+	text-align: center;
+}
+
+.btn-wrap button {
+	position: absolute;
+	z-index: 1;
+	top: 10%;
+	left:90%;
+}
+
+.btn-wrap-nodiv {
+	position: absolute;
+	z-index: 1;
+	top: 5%;
+	left:90%;
+}

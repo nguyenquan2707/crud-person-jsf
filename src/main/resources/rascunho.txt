@@ -1,0 +1,43 @@
+					 
+<p:galleria id="s-p-image" value="#{personController.selectedPerson.personImages}" var="personImage" panelWidth="300" panelHeight="200" showCaption="true">        						
+		<p:graphicImage value="#{personController.image}" title="#{personImage.nameImage}" styleClass="person-image" cache="false">
+			<f:param name="personId" value="#{personImage.person.id}"/>
+			<f:param name="imageId" value="#{personImage.id}"/>
+		</p:graphicImage>
+</p:galleria>
+
+								<div class="btn-wrap">								        						
+									<p:graphicImage value="#{personController.imageByHashOfSelectedPerson}" alt="double tap to remove" title="#{personImage.nameImage}" cache="false">
+										<f:param name="hashCode" value="#{personImage.hashCode}"/>																															
+									</p:graphicImage>
+									<p:commandButton class="ui-button-warning rounded-button" icon="pi pi-trash" >
+										<p:ajax event="click" listener="#{personController.removeImage(personImage.hashCode)}" update="s-p-image">
+											<f:param name="hashCode" value="#{personImage.hashCode}" />
+										</p:ajax>
+									</p:commandButton>
+								</div>
+
+    					
+<ui:repeat value="#{personController.personImages}" var="personImage1">
+       <p:graphicImage value="#{personImage1.image}"/>
+</ui:repeat>
+
+<p:graphicImage id="s-p-image" value="#{personController.firstImageOfSelectedPerson}" styleClass="person-image" cache="false"/>
+
+<p:commandButton type="button" onclick="PF('switcher').previous()"
+                icon="pi pi-chevron-left" id="prev" styleClass="p-mr-2 p-mb-3" />
+<p:commandButton type="button" onclick="PF('switcher').next()"
+                icon="pi pi-chevron-right" id="next" styleClass="p-mr-2 p-mb-3" />					
+<p:imageSwitch effect="wipe" widgetVar="switcher" id="manuelSwitcher" slideshowAuto="false">
+   <ui:repeat value="#{personController.selectedPerson.personImages}" var="personImage" id="manuelSwitcherImages" varStatus="varStatus" >
+		<p:graphicImage value="#{personController.imageByIndex}" title="#{personImage.nameImage}" styleClass="person-image" cache="false">
+			<f:param name="personId" value="#{personImage.person.id}"/>
+			<f:param name="imageIndex" value="#{varStatus.index}"/>
+		</p:graphicImage>
+   </ui:repeat>
+</p:imageSwitch>
+
+<context-param>
+	<param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
+  		<param-value>/WEB-INF/resources</param-value>
+	</context-param>
