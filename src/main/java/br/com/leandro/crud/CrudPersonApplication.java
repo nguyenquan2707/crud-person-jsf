@@ -8,15 +8,16 @@ import javax.servlet.DispatcherType;
 import org.ocpsoft.rewrite.servlet.RewriteFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
-// @SpringBootApplication
+@SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan({"br.com.leandro.crud"})
+@ComponentScan({"br.com.leandro.crud"})	
 public class CrudPersonApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
@@ -28,7 +29,7 @@ public class CrudPersonApplication extends SpringBootServletInitializer {
         FacesServlet servlet = new FacesServlet();
         return new ServletRegistrationBean<FacesServlet>(servlet, "*.jsf");
     }
-
+    
     @Bean
     public FilterRegistrationBean<RewriteFilter> rewriteFilter() {
         FilterRegistrationBean<RewriteFilter> rwFilter = new FilterRegistrationBean<RewriteFilter>(new RewriteFilter());
