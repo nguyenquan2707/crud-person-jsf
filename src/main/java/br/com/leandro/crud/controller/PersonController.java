@@ -8,7 +8,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.event.PhaseId;
-import javax.servlet.ServletContext;
 
 import org.ocpsoft.rewrite.annotation.Join;
 import org.ocpsoft.rewrite.annotation.RequestAction;
@@ -23,7 +22,6 @@ import org.primefaces.model.file.UploadedFile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.springframework.web.jsf.FacesContextUtils;
 
 import br.com.leandro.crud.Util;
 import br.com.leandro.crud.data.Gender;
@@ -134,6 +132,7 @@ public class PersonController {
 
 	public void handleFileUpload(FileUploadEvent event) {
 		UploadedFile file = event.getFile();
+		
 		if (file != null && file.getContent() != null && file.getContent().length > 0 && file.getFileName() != null) {
 
 			PersonImage personImages = new PersonImage();
@@ -143,8 +142,8 @@ public class PersonController {
 			personImages.setContentType(file.getContentType());
 			selectedPerson.getPersonImages().add(personImages);
 
-			FacesMessage msg = new FacesMessage("Successful", file.getFileName() + " is uploaded.");
-			FacesContext.getCurrentInstance().addMessage(null, msg);
+			FacesMessage msg = new FacesMessage("Successful", file.getFileName().trim() + " is uploaded.");
+			FacesContext.getCurrentInstance().addMessage("messages", msg);
 		}
 	}
 
