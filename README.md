@@ -17,3 +17,8 @@ We can access the documents in JSON format at:
 
 The OpenAPI definitions are in JSON format by default. For yaml format, we can obtain the definitions at:
 > http://34.75.238.108/api-docs.yaml
+
+## Remains to do
+* Create the address book in the JSF interface
+* Validate domain objects in Spring Boot using Hibernate Validator
+
