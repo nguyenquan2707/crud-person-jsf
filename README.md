@@ -1,5 +1,5 @@
 # crud-person
-Study Project: Spring Boot, JSF, API REST
+**Study Project: Spring Boot, JSF, API REST
 
 Link to the JSF interface:
 > http://34.75.238.108/
