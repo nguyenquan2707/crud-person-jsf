@@ -6,8 +6,6 @@ Link to the JSF interface:
 
 PS: The deployment was performed on Google Cloud on a VM f1-micro (1 vCPU, 0.6 GB of memory). So don't expect system performance :)
 
-requirements: Java 11
-
 ## Spring REST API
 
 Documentation is an essential part of building REST APIs.  SpringDoc is a tool that simplifies the generation and maintenance of API docs based on the OpenAPI 3 specification for Spring Boot 1.x and 2.x applications.
@@ -22,3 +20,12 @@ The OpenAPI definitions are in JSON format by default. For yaml format, we can o
 * Create the address book in the JSF interface
 * Validate domain objects in Spring Boot using Hibernate Validator
 * Develop automated Spring Boot tests
+
+## Project properties and requirements: 
+* Java 11
+* Spring Boot 2.5.0
+* Apache MyFaces 2.2.12
+* PrimeFaces 10.0.0
+* Project lombok 1.12.20
+* HSQLDB (HyperSQL DataBase) 2.6.0
+* Flyway 7.8.2
