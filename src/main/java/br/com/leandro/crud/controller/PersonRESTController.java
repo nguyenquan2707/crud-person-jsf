@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.leandro.crud.data.Person;
 import br.com.leandro.crud.service.PersonService;
+import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
 public class PersonRESTController {
@@ -22,27 +23,32 @@ public class PersonRESTController {
 	@Autowired
 	private PersonService personService;
 
+	@Operation (summary = "Return all registered people" )
 	@GetMapping("/REST/person")
 	public List<Person> findAll() {
 		return personService.findAll();
 	}
 
+	@Operation (summary = "Save or update a person" )
 	@PostMapping("/REST/person")
 	@ResponseStatus(value = HttpStatus.CREATED)
 	public Person save(@RequestBody Person person) {
 		return personService.save(person);
 	}
 
+	@Operation (summary = "Return a person by Id" )
 	@GetMapping("/REST/person/{id}")
 	public Person findById(@PathVariable Long id) {
 		return personService.findById(id);
 	}
 
+	@Operation (summary = "Replace a person by Id" )
 	@PutMapping("/REST/person/{id}")
 	public Person replacePerson(@RequestBody Person newPerson, @PathVariable Long id) {
 		return personService.replace(newPerson, id);
 	}
 	
+	@Operation (summary = "Delete a person by Id" )
 	@DeleteMapping("/REST/person/{id}")
 	public void delete(@PathVariable Long id) {
 		personService.deleteById(id);

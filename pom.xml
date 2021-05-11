@@ -13,7 +13,7 @@
 	
 	<groupId>br.com.leandro</groupId>
 	<artifactId>crud</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	
 	<!-- jar or war  -->
 	<packaging>war</packaging>
@@ -54,6 +54,11 @@
   			<artifactId>spring-boot-starter-tomcat</artifactId>  			
 		</dependency>
 		
+		<dependency>
+    		<groupId>org.springdoc</groupId>
+    		<artifactId>springdoc-openapi-ui</artifactId>
+    		<version>1.5.8</version>
+		</dependency>
 
 
 		<!-- adicionando JSF -->
