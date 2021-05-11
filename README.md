@@ -16,4 +16,4 @@ We can access the documents in JSON format at:
 > http://34.75.238.108/api-docs/
 
 The OpenAPI definitions are in JSON format by default. For yaml format, we can obtain the definitions at:
-> http://localhost:8080/api-docs.yaml
+> http://34.75.238.108/api-docs.yaml
