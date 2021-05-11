@@ -21,4 +21,4 @@ The OpenAPI definitions are in JSON format by default. For yaml format, we can o
 ## Remains to do
 * Create the address book in the JSF interface
 * Validate domain objects in Spring Boot using Hibernate Validator
-
+* Develop automated Spring Boot tests
