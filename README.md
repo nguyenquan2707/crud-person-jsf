@@ -8,7 +8,7 @@ PS: The deployment was performed on Google Cloud on a VM f1-micro (1 vCPU, 0.6 G
 
 requirements: Java 11
 
-## crud-person
+## Spring REST API
 
 Documentation is an essential part of building REST APIs.  SpringDoc is a tool that simplifies the generation and maintenance of API docs based on the OpenAPI 3 specification for Spring Boot 1.x and 2.x applications.
 
