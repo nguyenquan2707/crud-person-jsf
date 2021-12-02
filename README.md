@@ -2,7 +2,7 @@
 **Study Project: Spring Boot, JSF, API REST**
 
 Link to the JSF interface:
-> http://34.75.238.108/
+> http://200.19.33.250:9001/
 
 PS: The deployment was performed on Google Cloud on a VM f1-micro (1 vCPU, 0.6 GB of memory). So don't expect system performance :)
 
@@ -11,13 +11,13 @@ PS: The deployment was performed on Google Cloud on a VM f1-micro (1 vCPU, 0.6 G
 Documentation is an essential part of building REST APIs.
 
 We can access the documents in JSON format at:
-> http://34.75.238.108/api-docs/
+> http://200.19.33.250:9001/api-docs/
 
 The OpenAPI definitions are in JSON format by default. For yaml format, we can obtain the definitions at:
-> http://34.75.238.108/api-docs.yaml
+> http://200.19.33.250:9001/api-docs.yaml
 
 To view and interact with the API’s resources without having any of the implementation logic in place, try Swagger UI:
-> http://34.75.238.108/swagger.html
+> http://200.19.33.250:9001/swagger.html
 
 ## Remains to do
 * Create the address book in the JSF interface
